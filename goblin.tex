@@ -45,6 +45,16 @@
 
 \preto{\backmatter}{\addtocontents{toc}{\protect\addvspace{16pt}}}
 
+\makeatletter
+\addtopsmarks{Ruled}{}{%
+    \clearmark{chapter}
+    \clearmark{section}
+    \createmark{chapter}{left}{shownumber}{}{. \space}%
+    \createmark{section}{right}{nonumber}{}{}%
+}
+\makeatother
+\pagestyle{Ruled}
+
 \begin{document}
 
 \begin{titlingpage}
@@ -61,7 +71,10 @@
 \printnoidxglossary[type=\leipzigtype,title={Glossing Abbreviations}]
 
 \mainmatter
-\pagestyle{ruled}
+
+\part{\oldlang{}}
+
+\include{gram/old}
 
 \part{\lang{}}
 
