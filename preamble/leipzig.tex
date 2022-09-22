@@ -1,0 +1,38 @@
+%----------------------------
+%---------Glossaries---------
+%----------------------------
+
+\makenoidxglossaries
+
+\newleipzig{actson}{>}{acts upon}
+\newleipzig{dom}{i}{noun class I}
+\newleipzig{gob}{ii}{noun class II}
+\newleipzig{anim}{iii}{noun class III}
+\newleipzig{use}{iv}{noun class IV}
+\newleipzig{inan}{v}{noun class V}
+\newleipzig{many}{vi}{noun class VI}
+
+\newcommand{\ToFirst}{{\Actson}{\First}}
+\newcommand{\ToSecond}{{\Actson}{\Second}}
+\newcommand{\ToThird}{{\Actson}{\Third}}
+\newcommand{\ToDom}{{\ToThird}.{\Dom}}
+\newcommand{\ToGob}{{\ToThird}.{\Gob}}
+\newcommand{\ToAnim}{{\ToThird}.{\Anim}}
+\newcommand{\ToUse}{{\ToThird}.{\Use}}
+\newcommand{\ToInan}{{\ToThird}.{\Inan}}
+\newcommand{\ToMany}{{\ToThird}.{\Many}}
+
+\glssetwidest{CABBA}
+
+\makeatletter
+\newglossarystyle{fixed-mcols}{%
+    \setglossarystyle{alttree}%
+    \renewenvironment{theglossary}%
+    {%
+        \begin{multicols}{3}%
+            \def\@gls@prevlevel{-1}%
+%           \mbox{}\par
+        }%
+        {\par\end{multicols}}%
+}
+\makeatother
